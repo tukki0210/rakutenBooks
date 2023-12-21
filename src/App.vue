@@ -2,10 +2,8 @@
   <v-app id="inspire">
     <v-main class="bg-grey-lighten-2">
       <v-container>
-        <Book 
-          v-for="book in booksList" 
-          v-bind:book="book" />
-        
+        <Book v-for="book in booksList" v-bind:book="book" />
+
       </v-container>
       <v-container>
         <CreateBook />
@@ -16,6 +14,7 @@
 
 <script>
 import Book from './components/Book.vue';
+import CreateBook from './components/CreateBook.vue'
 
 export default {
   name: 'App',
