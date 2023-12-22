@@ -13,6 +13,12 @@ const routes = [
         name: 'About',
         // ()=>import() 動的インポート、必要になったら読み込む
         component: () => import('../views/About.vue')
+    },
+    {
+        path: '/add',
+        name: 'Add',
+        // ()=>import() 動的インポート、必要になったら読み込む
+        component: () => import('../views/Add.vue')
     }
 ]
 

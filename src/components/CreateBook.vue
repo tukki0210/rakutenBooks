@@ -11,14 +11,6 @@
         </div>
         <button v-on:click="doSubmit">送信</button>
     </v-card>
-
-    <v-card class="ma-2 pa-2">
-        <!-- この方法もあり -->
-        <form action='http://127.0.0.1:8000/api/books'>
-            <input type="text" id="title">
-            <input type="submit" value="送信">
-        </form>
-    </v-card>
 </template>
 <script>
 import axios from 'axios';
