@@ -1,6 +1,13 @@
 <template>
   <v-app id="inspire">
     <v-main class="bg-grey-lighten-2">
+      <div>
+        <!-- aタグのリンクの代わり -->
+        <router-link to="/">Home</router-link>
+        <router-link to="/about">About</router-link>
+      </div>
+      <!-- router/index.jsで書いたコンポーネントが反映 -->
+      <router-view />
       <v-container>
         <Book v-for="book in booksList" v-bind:book="book" />
 
@@ -15,6 +22,7 @@
 <script>
 import Book from './components/Book.vue';
 import CreateBook from './components/CreateBook.vue'
+import axios from 'axios'
 
 export default {
   name: 'App',
@@ -37,6 +45,10 @@ export default {
     const response = await fetch(url);
     // データをJavaScriptのオブジェクトに変換
     const booksList = await response.json();
+
+    // const response = await axios.get(url)
+
+    // const booksList = response.data
 
     console.log(booksList)
     // 取得したデータをdata()のdataにコピー

@@ -21,6 +21,8 @@
     </v-card>
 </template>
 <script>
+import axios from 'axios';
+
 export default {
     name: "CreateBook",
     data() {
@@ -36,16 +38,19 @@ export default {
                 title: this.title,
                 price: this.price
             }
+            const url = 'http://127.0.0.1:8000/api/books'
 
-            const response = await fetch('http://127.0.0.1:8000/api/books',{
-                method: "POST",
-                headers: {
-                    "Content-Type":"application/json"
-                },
-                body: JSON.stringify(data)
-            })
+            // const response = await fetch('http://127.0.0.1:8000/api/books',{
+            //     method: "POST",
+            //     headers: {
+            //         "Content-Type":"application/json"
+            //     },
+            //     body: JSON.stringify(data)
+            // })
 
-            console.log(response)
+            // console.log(response)]
+
+            await axios.post(url,data);
         }
     }
 }
